@@ -13,7 +13,7 @@ COPY app.js ./
 EXPOSE 3000
 
 # Run App
-CMD node app.js
+# CMD node app.js $HOME
 
 # Exec Form
-# CMD ["node", "app.js"]
+CMD ["node", "app.js", "$HOME"]

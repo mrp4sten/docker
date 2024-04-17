@@ -10,6 +10,12 @@ const server = createServer((req, res) => {
   res.end('Hello World');
 });
 
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM');
+  process.exit(0);
+})
+
 server.listen(port, hostname, () => {
+  console.log(process.argv);
   console.log(`Server running at http://${hostname}:${port}/`);
 });
