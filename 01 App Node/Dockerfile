@@ -14,3 +14,6 @@ EXPOSE 3000
 
 # Run App
 CMD node app.js
+
+# Exec Form
+# CMD ["node", "app.js"]
