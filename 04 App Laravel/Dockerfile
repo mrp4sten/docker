@@ -1,17 +1,10 @@
-FROM ubuntu:22.04
+FROM php:8.1
 
-ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Mexico_City
 
-RUN apt update && apt install -y\
-    curl \
-    unzip \
-    php8.1 \
-    php8.1-curl \
-    php8.1-xml
+RUN apt update && apt install unzip -y
 
-RUN curl -sS https://getcomposer.org/installer \
-    | php -- --install-dir=/usr/bin --filename=composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
