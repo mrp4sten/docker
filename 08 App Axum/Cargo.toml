@@ -9,6 +9,3 @@ edition = "2021"
 axum = "0.6.12"
 tokio = { version = "1.27.0", features = ["full"] }
 
-[[bin]]
-name = "main"
-path = "src/main.rs"
